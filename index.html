@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>f'AI la spesa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-container">
+    <header>
+      <h1>f'AI la spesa</h1>
+      <div class="top-controls">
+        <nav>
+          <button class="tab-btn" onclick="showTab('list')">Lista</button>
+          <button class="tab-btn" onclick="showTab('recipes')">Ricette</button>
+        </nav>
+        <select id="themeSelector">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+          <option value="cool">Cool</option>
+        </select>
+      </div>
+    </header>
+
+    <section id="listTab" class="tab-content active">
+      <div class="input-group">
+        <input type="text" id="itemInput" placeholder="Aggiungi un alimento..." autocomplete="off"/>
+        <button id="addBtn">Aggiungi</button>
+        <button id="clearBtn">Svuota tutto</button>
+      </div>
+      <div id="suggestionsBox" class="suggestions-box"></div>
+      <ul id="itemList" class="list"></ul>
+    </section>
+
+    <section id="recipesTab" class="tab-content hidden">
+      
+      <div class="input-group">
+        <input type="text" id="recipeInput" placeholder="Cerca una ricetta..." autocomplete="off"/>
+        <button id="searchRecipeBtn">Cerca</button>
+      </div>
+      <div id="recipeResults"></div>
+    </section>
+
+    <footer>
+      <p>© 2025 f'AI la spesa</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

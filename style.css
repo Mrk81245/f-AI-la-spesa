@@ -1,0 +1,183 @@
+
+:root {
+  --color-bg: rgba(255, 255, 255, 0.1);
+  --color-text: #222;
+  --color-accent: #5DADE2;
+  --blur: 10px;
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.2);
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  color: var(--color-text);
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.app-container {
+  max-width: 700px;
+  margin: auto;
+  padding: 1rem;
+}
+
+header, footer {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.top-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+nav .tab-btn {
+  padding: 0.5rem 1.2rem;
+  margin: 0 0.25rem;
+  border: none;
+  border-radius: 12px;
+  background: var(--color-accent);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+nav .tab-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.tab-content {
+  display: none;
+  background: var(--glass-bg);
+  border-radius: 20px;
+  padding: 1rem;
+  backdrop-filter: blur(var(--blur));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 1px solid var(--glass-border);
+  margin-bottom: 2rem;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  outline: none;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 12px;
+  background-color: var(--color-accent);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+ul.list {
+  list-style: none;
+  padding: 0;
+}
+
+ul.list li {
+  padding: 0.75rem;
+  margin: 0.25rem 0;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+ul.list li:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.suggestions-box {
+  margin-bottom: 1rem;
+}
+
+.suggestions-box .suggestion-item {
+  background: rgba(255,255,255,0.7);
+  margin-bottom: 4px;
+  padding: 0.4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.suggestions-box .suggestion-item:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+#recipeResults .ricetta-trovata {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.6);
+  border-radius: 16px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+#themeSelector {
+  padding: 0.4rem;
+  border-radius: 10px;
+  border: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Temi */
+.theme-light {
+  --color-bg: #ffffff;
+  --color-text: #222;
+  --color-accent: #5DADE2;
+}
+.theme-dark {
+  --color-bg: #1e1e1e;
+  --color-text: #f2f2f2;
+  --color-accent: #3498db;
+}
+.theme-cool {
+  --color-bg: #e3f2fd;
+  --color-text: #0d47a1;
+  --color-accent: #00acc1;
+}
+
+
+/* Fix: classe hidden per i tab */
+.hidden {
+  display: none !important;
+}
