@@ -4,7 +4,8 @@
   "description": "A grocery list and recipe app with AI integration.",
   "main": "api/recipe.js",
   "scripts": {
-    "start": "vercel dev"
+    "start": "vercel dev",
+    "build": "echo 'No build step needed for static files and serverless functions'"
   },
   "dependencies": {
     "node-fetch": "^2.6.7"
