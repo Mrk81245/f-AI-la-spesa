@@ -1,8 +1,10 @@
-  {
-      "rewrites": [
-        { "source": "/api/recipe", "destination": "/api/recipe.js" }
-      ],
-     "functions": {
-        "api/recipe.js": { "runtime": "@vercel/node@2.0.0" }
-     }
-   }
+{
+  "rewrites": [
+    { "source": "/api/recipe", "destination": "/api/recipe.js" }
+  ],
+  "functions": {
+    "api/recipe.js": { "runtime": "@vercel/node@2.0.0" }
+  },
+  "installCommand": "npm install",
+  "buildCommand": "npm run build"
+}
